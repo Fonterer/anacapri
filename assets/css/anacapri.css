@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #a2d3d1;
+}
+
+.an-header {
+  background: url(../img/header-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  /*min-height: 100%;*/
+  min-width: 1024px;
+
+  /*height: auto;*/
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 767px;
+  width: 100%;
+}
+
+.an-content {
+  height: 900px;
+}
