@@ -1,3 +1,10 @@
+@import "fonts";
+
+$flama-book: "flamasemicondensed-basic";
+$flama-semicondensed: "FlamaSemicondensed-Medium";
+$gravur-condensed-bold: "GravurCondensed-Bold";
+$gravur-condensed-regular: "GravurCondensed-Regular";
+
 .an-header {
   background: url(../img/an-header.jpg) no-repeat top center;
   /*background-size: cover;*/
@@ -15,7 +22,7 @@
   }
 
   .an-subtitle {
-    margin-bottom: 0 auto 35px auto;
+    margin: 0 auto 35px auto;
     text-align: center;
   }
 }
@@ -35,14 +42,54 @@ h1 {
 
 .an-title {
   color: #fff;
-  font-family: "Flama Semicondensed", arial;
+  font-family: $flama-semicondensed;
   font-size: 26px;
 }
 
 .an-subtitle {
   color: #fff;
-  font-family: "Flama Semicondensed book", arial;
+  font-family: $flama-book;
   font-size: 21px;
+}
+
+.an-form {
+  .an-input {
+    margin-bottom: 20px;
+    width: 373px;
+  }
+}
+
+.an-cform {
+  text-align: center;
+}
+
+.an-input {
+  border: none;
+  border-radius: 20px;
+  display: inline-block;
+  font-family: $flama-book;
+  font-size: 10px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+.an-button {
+  transition: all ease 1s;
+  background: #ea002a;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $gravur-condensed-regular;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-transform: uppercase;
+
+  &:hover {
+    background: red;
+  }
 }
 
 .an-content {

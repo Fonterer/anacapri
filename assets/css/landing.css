@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'FlamaSemicondensed-Medium';
+  src: url("../fonts/FlamaSemicondensed-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FlamaSemicondensed-Medium.woff") format("woff"), url("../fonts/FlamaSemicondensed-Medium.ttf") format("truetype"), url("../fonts/FlamaSemicondensed-Medium.svg#FlamaSemicondensed-Medium") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Bold';
+  src: url("../fonts/GravurCondensed-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Bold.woff") format("woff"), url("../fonts/GravurCondensed-Bold.ttf") format("truetype"), url("../fonts/GravurCondensed-Bold.svg#GravurCondensed-Bold") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Regular';
+  src: url("../fonts/GravurCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Regular.woff") format("woff"), url("../fonts/GravurCondensed-Regular.ttf") format("truetype"), url("../fonts/GravurCondensed-Regular.svg#GravurCondensed-Regular") format("svg"); }
+@font-face {
+  font-family: 'flamasemicondensed-basic';
+  src: url("../fonts/flamasemicondensed-basic.eot?#iefix") format("embedded-opentype"), url("../fonts/flamasemicondensed-basic.woff") format("woff"), url("../fonts/flamasemicondensed-basic.ttf") format("truetype"), url("../fonts/flamasemicondensed-basic.svg#flamasemicondensed-basic") format("svg"); }
 .an-header {
   background: url(../img/an-header.jpg) no-repeat top center;
   /*background-size: cover;*/
@@ -11,7 +23,7 @@
     margin: 0 auto 10px auto;
     text-align: center; }
   .an-signin .an-subtitle {
-    margin-bottom: 0 auto 35px auto;
+    margin: 0 auto 35px auto;
     text-align: center; }
 
 h1 {
@@ -26,13 +38,45 @@ h1 {
 
 .an-title {
   color: #fff;
-  font-family: "Flama Semicondensed", arial;
+  font-family: "FlamaSemicondensed-Medium";
   font-size: 26px; }
 
 .an-subtitle {
   color: #fff;
-  font-family: "Flama Semicondensed book", arial;
+  font-family: "flamasemicondensed-basic";
   font-size: 21px; }
+
+.an-form .an-input {
+  margin-bottom: 20px;
+  width: 373px; }
+
+.an-cform {
+  text-align: center; }
+
+.an-input {
+  border: none;
+  border-radius: 20px;
+  display: inline-block;
+  font-family: "flamasemicondensed-basic";
+  font-size: 10px;
+  padding: 10px 15px;
+  text-transform: uppercase; }
+
+.an-button {
+  transition: all ease 1s;
+  background: #ea002a;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "GravurCondensed-Regular";
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-transform: uppercase; }
+  .an-button:hover {
+    background: red; }
 
 .an-content {
   background: url(../img/an-content.jpg) no-repeat top center;
