@@ -4,5 +4,9 @@
 }
 
 body {
-  background: red;
+  background: #a5d6d4;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
 }

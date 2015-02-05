@@ -12,7 +12,7 @@ $gravur-condensed-regular: "GravurCondensed-Regular";
   min-width: 1024px;
 }
 
-.an-signin {
+.an-signup {
   float: right;
   max-width: 440px;
 
@@ -55,7 +55,7 @@ h1 {
 .an-form {
   .an-input {
     margin-bottom: 20px;
-    width: 373px;
+    width: 320px;
   }
 }
 
@@ -68,9 +68,9 @@ h1 {
   border-radius: 20px;
   display: inline-block;
   font-family: $flama-book;
-  font-size: 10px;
+  font-size: 13px;
   padding: 10px 15px;
-  text-transform: uppercase;
+  text-transform: uppercase
 }
 
 .an-button {
@@ -81,9 +81,8 @@ h1 {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: $gravur-condensed-regular;
+  font-family: $gravur-condensed-bold;
   font-size: 20px;
-  font-weight: bold;
   padding: 10px 25px;
   text-transform: uppercase;
 
@@ -92,10 +91,46 @@ h1 {
   }
 }
 
+.an-signin {
+  color: #fff;
+  display: block;
+  font-family: $flama-book;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
 .an-content {
   background: url(../img/an-content.jpg) no-repeat top center;
   /*background-size: cover;*/
   height: 907px;
+}
+
+.an-share {
+  padding-top: 345px;
+  width: 720px;
+
+  .an-title, .an-subtitle {
+    color: #686868;
+    text-align: center
+  }
+
+  .an-form {
+    margin-top: 50px;
+  }
+
+  .an-cform {
+    clear: both;
+  }
+
+  .an-input {
+    float: left;
+  }
+
+  .an-input[type=email] {
+    float: right;
+  }
 }
 
 .an-footer {

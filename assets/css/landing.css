@@ -16,13 +16,13 @@
   height: 767px;
   min-width: 1024px; }
 
-.an-signin {
+.an-signup {
   float: right;
   max-width: 440px; }
-  .an-signin .an-title {
+  .an-signup .an-title {
     margin: 0 auto 10px auto;
     text-align: center; }
-  .an-signin .an-subtitle {
+  .an-signup .an-subtitle {
     margin: 0 auto 35px auto;
     text-align: center; }
 
@@ -48,7 +48,7 @@ h1 {
 
 .an-form .an-input {
   margin-bottom: 20px;
-  width: 373px; }
+  width: 320px; }
 
 .an-cform {
   text-align: center; }
@@ -58,7 +58,7 @@ h1 {
   border-radius: 20px;
   display: inline-block;
   font-family: "flamasemicondensed-basic";
-  font-size: 10px;
+  font-size: 13px;
   padding: 10px 15px;
   text-transform: uppercase; }
 
@@ -70,18 +70,41 @@ h1 {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "GravurCondensed-Regular";
+  font-family: "GravurCondensed-Bold";
   font-size: 20px;
-  font-weight: bold;
   padding: 10px 25px;
   text-transform: uppercase; }
   .an-button:hover {
     background: red; }
 
+.an-signin {
+  color: #fff;
+  display: block;
+  font-family: "flamasemicondensed-basic";
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%; }
+
 .an-content {
   background: url(../img/an-content.jpg) no-repeat top center;
   /*background-size: cover;*/
   height: 907px; }
+
+.an-share {
+  padding-top: 345px;
+  width: 720px; }
+  .an-share .an-title, .an-share .an-subtitle {
+    color: #686868;
+    text-align: center; }
+  .an-share .an-form {
+    margin-top: 50px; }
+  .an-share .an-cform {
+    clear: both; }
+  .an-share .an-input {
+    float: left; }
+  .an-share .an-input[type=email] {
+    float: right; }
 
 .an-footer {
   background: url(../img/an-footer.jpg) no-repeat top center;
