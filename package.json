@@ -1,0 +1,16 @@
+{
+  "name": "Anacapri",
+  "version": "0.0.1",
+  "author": "Gabriel Zigolis <gabriel.zigolis@arezzo.com.br>",
+  "description": "Anacapri Landing Page",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.11.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-remove": "^0.1.0"
+  }
+}

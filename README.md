@@ -1,2 +1,1 @@
-# anacapri
-Landing page
+# Anacapri

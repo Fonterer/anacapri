@@ -1,0 +1,51 @@
+.an-header {
+  background: url(../img/an-header.jpg) no-repeat top center;
+  /*background-size: cover;*/
+  height: 767px;
+  min-width: 1024px; }
+
+.an-signin {
+  float: right;
+  max-width: 440px; }
+  .an-signin .an-title {
+    margin: 0 auto 10px auto;
+    text-align: center; }
+  .an-signin .an-subtitle {
+    margin-bottom: 0 auto 35px auto;
+    text-align: center; }
+
+h1 {
+  height: 267px;
+  margin: 45px auto;
+  width: 267px; }
+  h1 a {
+    background: url(../img/an-logo.png) no-repeat;
+    display: block;
+    font: 0/0 a;
+    height: 267px; }
+
+.an-title {
+  color: #fff;
+  font-family: "Flama Semicondensed", arial;
+  font-size: 26px; }
+
+.an-subtitle {
+  color: #fff;
+  font-family: "Flama Semicondensed book", arial;
+  font-size: 21px; }
+
+.an-content {
+  background: url(../img/an-content.jpg) no-repeat top center;
+  /*background-size: cover;*/
+  height: 907px; }
+
+.an-footer {
+  background: url(../img/an-footer.jpg) no-repeat top center;
+  /*background-size: cover;*/
+  height: 932px; }
+
+.an-ct {
+  margin: 0 auto;
+  max-width: 1230px; }
+
+/*# sourceMappingURL=landing.css.map */

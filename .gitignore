@@ -1,5 +1,6 @@
 .DS_Store
 
+.sass-cache/
 assets/vendor/
 node_modules
 npm-debug.log
