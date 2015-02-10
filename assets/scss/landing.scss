@@ -12,6 +12,11 @@ $gravur-condensed-regular: "GravurCondensed-Regular";
   min-width: 1024px;
 }
 
+.an-ct {
+  margin: 0 auto;
+  width: 1230px
+}
+
 .an-signup {
   float: right;
   max-width: 440px;
@@ -59,7 +64,7 @@ h1 {
   }
 }
 
-.an-cform {
+.an-al {
   text-align: center;
 }
 
@@ -131,6 +136,10 @@ h1 {
   .an-input[type=email] {
     float: right;
   }
+
+  .an-button {
+    margin-top: 30px;
+  }
 }
 
 .an-footer {
@@ -139,7 +148,100 @@ h1 {
   height: 932px;
 }
 
-.an-ct {
-  margin: 0 auto;
-  max-width: 1230px
+.an-clips {
+  padding-top: 310px;
+  position: relative;
+  z-index: 2;
+}
+
+.an-clip {
+  background: url(../img/an-clip.png) no-repeat top center;
+  display: inline-block;
+  height: 148px;
+  margin: 0 110px;
+  width: 61px;
+
+  &:first-child {
+    margin-right: 150px;
+  }
+
+  &:last-child {
+    margin-left: 150px;
+  }
+}
+
+.rotated {
+  -ms-transform: rotate(13deg);
+  -webkit-transform: rotate(13deg);
+  transform: rotate(13deg);
+}
+
+.an-polaroid {
+  position: relative;
+  top: -70px;
+
+  img {
+    position: absolute;
+  }
+
+  .nd {
+    left: 280px;
+    top: -20px;
+  }
+
+  .rd {
+    left: 570px;
+    top: -10px;
+  }
+
+  .th {
+    left: 865px;
+    top: -29px;
+  }
+}
+
+.an-social {
+  display: inline-block;
+  margin-top: 360px;
+
+  li {
+    background: url(../img/an-sprite.png) no-repeat;
+    display: inline-block;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    font: 0/0 a;
+  }
+
+  .an {
+    display: block;
+  }
+
+  .fb {
+    background-position: 0 -36px;
+  }
+
+  .in {
+    background-position: -34px -36px;
+  }
+}
+
+.fb, .in {
+  height: 32px;
+  width: 32px;
+
+  a {
+    height: 32px;
+  }
+}
+
+.an {
+  height: 34px;
+  width: 153px;
+
+  a {
+    height: 34px
+  }
 }

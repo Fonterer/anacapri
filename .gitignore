@@ -2,6 +2,7 @@
 
 .sass-cache/
 assets/vendor/
+assets/psd/
 node_modules
 npm-debug.log
 .buildpath
