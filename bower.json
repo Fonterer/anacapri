@@ -1,0 +1,39 @@
+{
+  "name": "anacapri-landing",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "1.x",
+    "underscore": "1.x",
+    "jquery": "2.x",
+    "requirejs": "2.x"
+  },
+  "homepage": "https://github.com/zigolis/anacapri",
+  "authors": [
+    "Gabriel Zigolis <gabriel.zigolis@gmail.com>"
+  ],
+  "description": "Static dependencies of the Anacapri landing",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "anacapri",
+    "js",
+    "backbone",
+    "node",
+    "slim",
+    "php",
+    "amd",
+    "require"
+  ],
+  "license": "MIT"
+}
