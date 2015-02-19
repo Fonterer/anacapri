@@ -25,9 +25,12 @@ require.config({
 
 require(
     [
-        'view/app'
+        'backbone',
+        'route/app'
     ],
-    function (AppView) {
-        var app = new AppView();
+    function (Backbone, Router) {
+        var router = new Router(function(){
+            Backbone.history.start({'pushState' : false, 'hashChange' : true});
+        });
     }
 );
