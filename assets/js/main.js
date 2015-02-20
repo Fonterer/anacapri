@@ -14,12 +14,16 @@ require.config({
                 'jquery'
             ],
             exports: 'Backbone'
+        },
+        spin: {
+            exports: 'spin'
         }
     },
     paths: {
         jquery     : '../vendor/jquery/jquery',
         underscore : '../vendor/underscore/underscore',
-        backbone   : '../vendor/backbone/backbone'
+        backbone   : '../vendor/backbone/backbone',
+        spin       : '../vendor/spinjs/spin'
     }
 });
 
