@@ -3,9 +3,9 @@ define(
   [
     'jquery',
     'backbone',
-    'view/userCreate'
+    'view/user'
   ],
-  function($, Backbone, UserCreate){
+  function($, Backbone, UserView){
     'use strict';
 
     var AppRoute = Backbone.Router.extend({
@@ -15,12 +15,11 @@ define(
 
       initialize: function(){
         console.log('Router - initialized');
-        this.userCreate = new UserCreate();
-        // this.index();
+        this.index();
       },
 
       index: function() {
-        console.log('Index');
+        this.userView = new UserView();
       }
     });
 
