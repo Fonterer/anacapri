@@ -96,6 +96,11 @@ h1 {
   }
 }
 
+input[disabled] {
+  cursor: not-allowed;
+}
+
+
 .an-signin {
   color: #fff;
   display: block;
@@ -246,30 +251,35 @@ h1 {
   }
 }
 
-.loader {
+.an-overlay {
   background: rgba(0,0,0,0.3);
-  display: none;
   height: 100%;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 1;
 }
 
 .hide {
   display: none;
 }
 
-.an-login {
+.overflow {
+  overflow: hidden;
+}
+
+.an-login, .an-invites {
   background: #fff;
   border-radius: 25px;
   left: 50%;
-  margin: 0 -230px;
+  margin-left: -219px;
+  margin-top: -170px;
   padding: 30px 0;
   position: absolute;
-  top: 200px;
+  top: 50%;
   width: 437px;
+  z-index: 2;
 
   .an-title {
     color: red;
@@ -300,5 +310,16 @@ h1 {
   .an-title, .an-subtitle {
     color: #666;
     margin: 0;
+  }
+}
+
+.an-invites {
+  text-align: center;
+
+  .an-button {
+    border: none;
+    margin: 20px 0 0;
+    padding: 10px 85px;
+    text-decoration: none;
   }
 }

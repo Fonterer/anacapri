@@ -9,7 +9,7 @@ define(
         'use strict';
 
         var UserView = Backbone.View.extend({
-            el: '.an-form',
+            el: '.signin',
 
             events: {
                 'submit': 'userCreate'
@@ -18,6 +18,7 @@ define(
             initialize: function(){
                 console.log('User - initialized');
                 this.user = new UserModel();
+                // this.friend = new FriendModel();
             },
 
             userCreate: function(e){
@@ -54,11 +55,11 @@ define(
                         // TO DO - create a method
                         setTimeout(function(){
                             $('html, body').animate({scrollTop: $('.an-content').offset().top}, 'slow');
-                            window.location.hash = 'friend'
+                            window.location.hash = 'convide'
                         }, 1000);
 
                         // TO DO - create a method
-                        $('.friends .an-input, .friends .an-button').each(function() {
+                        $('.friends .an-input').each(function() {
                             $(this).removeAttr('disabled');
                         });
                     }

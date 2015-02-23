@@ -3,9 +3,10 @@ define(
   [
     'jquery',
     'backbone',
-    'view/user'
+    'view/user',
+    'view/friend'
   ],
-  function($, Backbone, UserView){
+  function($, Backbone, UserView, FriendView){
     'use strict';
 
     var AppRoute = Backbone.Router.extend({
@@ -20,6 +21,7 @@ define(
 
       index: function() {
         this.userView = new UserView();
+        this.friendView = new FriendView();
       }
     });
 

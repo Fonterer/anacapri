@@ -11,7 +11,7 @@
       <div class="an-ct">
         <div class="an-signup">
           <h1>
-            <a href="#">Anacapri</a>
+            <a href="./">Anacapri</a>
           </h1>
 
           <h3 class="an-title">
@@ -25,11 +25,11 @@
 
           <form action="#" method="POST" class="an-form signin">
             <div class="an-al">
-              <input type="text" name="name" class="an-input" placeholder="Digite o seu nome completo">
+              <input type="text" name="name" class="an-input" required placeholder="Digite o seu nome completo">
             </div>
 
             <div class="an-al">
-              <input type="email" name="email" class="an-input" placeholder="Digite o seu email">
+              <input type="email" name="email" class="an-input" required placeholder="Digite o seu email">
             </div>
 
             <div class="an-al">
@@ -52,7 +52,8 @@
       </div><!-- an-ct -->
     </header>
 
-    <section class="an-content" id="friend">
+    <section class="an-content">
+      <a id="convide"></a>
       <div class="an-ct">
         <div class="an-share">
           <h2 class="an-title">Pode convidar todo mundo!</h2>
@@ -60,32 +61,32 @@
 
           <form action="#" method="POST" class="an-form friends">
             <div class="an-al">
-              <input type="text" name="friend-name-1" class="an-input" disabled="disabled" placeholder="Digite o nome completo">
-              <input type="email" name="friend-email-1" class="an-input" disabled="disabled" placeholder="Coloque aqui o email ;-)">
+              <input type="text" name="friend-name" class="an-input" disabled required placeholder="Digite o nome completo">
+              <input type="email" name="friend-email" class="an-input" disabled required placeholder="Coloque aqui o email ;-)">
             </div>
 
             <div class="an-al">
-              <input type="text" name="friend-name-2" class="an-input" disabled="disabled" placeholder="Digite o nome completo">
-              <input type="email" name="friend-email-2" class="an-input" disabled="disabled" placeholder="Coloque aqui o email ;-)">
+              <input type="text" name="friend-name-2" class="an-input" disabled placeholder="Digite o nome completo">
+              <input type="email" name="friend-email-2" class="an-input" disabled placeholder="Coloque aqui o email ;-)">
             </div>
 
             <div class="an-al">
-              <input type="text" name="friend-name-3" class="an-input" disabled="disabled" placeholder="Digite o nome completo">
-              <input type="email" name="friend-email-3" class="an-input" disabled="disabled" placeholder="Coloque aqui o email ;-)">
+              <input type="text" name="friend-name-3" class="an-input" disabled placeholder="Digite o nome completo">
+              <input type="email" name="friend-email-3" class="an-input" disabled placeholder="Coloque aqui o email ;-)">
             </div>
 
             <div class="an-al">
-              <input type="text" name="friend-name-4" class="an-input" disabled="disabled" placeholder="Digite o nome completo">
-              <input type="email" name="friend-email-"4 class="an-input" disabled="disabled" placeholder="Coloque aqui o email ;-)">
+              <input type="text" name="friend-name-4" class="an-input" disabled placeholder="Digite o nome completo">
+              <input type="email" name="friend-email-"4 class="an-input" disabled placeholder="Coloque aqui o email ;-)">
             </div>
 
             <div class="an-al">
-              <input type="text" name="friend-name-5" class="an-input" disabled="disabled" placeholder="Digite o nome completo">
-              <input type="email" name="friend-email-5" class="an-input" disabled="disabled" placeholder="Coloque aqui o email ;-)">
+              <input type="text" name="friend-name-5" class="an-input" disabled placeholder="Digite o nome completo">
+              <input type="email" name="friend-email-5" class="an-input" disabled placeholder="Coloque aqui o email ;-)">
             </div>
 
             <div class="an-al">
-              <input type="submit" class="an-button" disabled="disabled" value="Vamos nessa!">
+              <input type="submit" class="an-button" disabled value="Vamos nessa!">
             </div>
           </form>
         </div>
@@ -93,6 +94,7 @@
     </section>
 
     <footer class="an-footer">
+      <a id="polaroid"></a>
       <div class="an-ct">
         <div class="an-clips">
           <span class="an-clip"></span>
@@ -135,7 +137,18 @@
         </div>
       </form>
     </div><!-- an-login -->
-    <div class="loader"></div>
+
+    <div class="an-invites hide">
+      <h2 class="an-title">Convites enviados!</h2>
+      <p class="an-subtitle">
+        Parabéns, seus convites foram enviados <br>
+        para as suas amigas com sucesso.
+      </p>
+
+      <a href="#" class="an-button">OK</a>
+    </div><!-- an-invites -->
+
+    <div class="an-overlay hide"></div>
     <script data-main="assets/js/main" src="assets/vendor/requirejs/require.js"></script>
   </body>
 </html>
