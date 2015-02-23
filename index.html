@@ -23,7 +23,7 @@
             gente te conta tudo.
           </p>
 
-          <form action="#" method="POST" class="an-form">
+          <form action="#" method="POST" class="an-form signin">
             <div class="an-al">
               <input type="text" name="name" class="an-input" placeholder="Digite o seu nome completo">
             </div>
@@ -38,17 +38,27 @@
 
             <a href="#" class="an-signin">Já tenho cadastro! Fazer login.</a>
           </form>
-        </div><!-- an-signin -->
+
+          <div class="an-welcome hide">
+            <h3 class="an-title">
+              Olá <span></span>!
+            </h3>
+
+            <p class="an-subtitle">
+              Você conhecerá as novidades em breve.
+            </p>
+          </div>
+        </div><!-- an-signup -->
       </div><!-- an-ct -->
     </header>
 
-    <section class="an-content">
+    <section class="an-content" id="friend">
       <div class="an-ct">
         <div class="an-share">
           <h2 class="an-title">Pode convidar todo mundo!</h2>
           <p class="an-subtitle">Novidade boa tem que compartilhar:</p>
 
-          <form action="#" method="POST" class="an-form">
+          <form action="#" method="POST" class="an-form friends">
             <div class="an-al">
               <input type="text" name="friend-name-1" class="an-input" disabled="disabled" placeholder="Digite o nome completo">
               <input type="email" name="friend-email-1" class="an-input" disabled="disabled" placeholder="Coloque aqui o email ;-)">
@@ -75,7 +85,7 @@
             </div>
 
             <div class="an-al">
-              <input type="submit" class="an-button" value="Vamos nessa!">
+              <input type="submit" class="an-button" disabled="disabled" value="Vamos nessa!">
             </div>
           </form>
         </div>
@@ -107,6 +117,24 @@
         </ul>
       </div><!-- an-al -->
     </footer>
+
+    <div class="an-login hide">
+      <h2 class="an-title">Login</h2>
+      <p class="an-subtitle">
+        Se você já se cadastrou antes, digite o seu <br>
+        email no campo abaixo para fazer login.
+      </p>
+
+      <form action="#" method="POST" class="an-form">
+        <div class="an-al">
+          <input type="email" name="login-email" class="an-input" placeholder="Coloque aqui seu email ;-)">
+        </div>
+
+        <div class="an-al">
+          <input type="submit" class="an-button" value="Entrar">
+        </div>
+      </form>
+    </div><!-- an-login -->
     <div class="loader"></div>
     <script data-main="assets/js/main" src="assets/vendor/requirejs/require.js"></script>
   </body>

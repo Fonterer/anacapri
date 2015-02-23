@@ -22,9 +22,9 @@ define(
 
             userCreate: function(e){
                 var fieldsForm = {
-                    "id"   : null,
-                    "name" : this.$('[name="name"]').val(),
-                    "email": this.$('[name="email"]').val()
+                    'id'   : null,
+                    'name' : this.$('[name="name"]').val(),
+                    'email': this.$('[name="email"]').val()
                 };
 
                 this.user.save(fieldsForm, {
@@ -43,8 +43,24 @@ define(
                         var  date = new Date()
                         date.setTime(date.getTime() + (30*24*60*60*1000));
 
-                        var expires = "expires=" + date.toGMTString();
-                        document.cookie = "anacapri=true; " + expires;
+                        var expires = 'expires=' + date.toGMTString();
+                        document.cookie = 'anacapri=true;' + expires;
+
+                        // TO DO - create a method
+                        $('.signin').addClass('hide');
+                        $('.an-welcome span').text(data.attributes.name);
+                        $('.an-welcome').removeClass('hide');
+
+                        // TO DO - create a method
+                        setTimeout(function(){
+                            $('html, body').animate({scrollTop: $('.an-content').offset().top}, 'slow');
+                            window.location.hash = 'friend'
+                        }, 1000);
+
+                        // TO DO - create a method
+                        $('.friends .an-input, .friends .an-button').each(function() {
+                            $(this).removeAttr('disabled');
+                        });
                     }
                 });
 

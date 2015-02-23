@@ -192,4 +192,39 @@ h1 {
   width: 100%;
   z-index: 999; }
 
+.hide {
+  display: none; }
+
+.an-login {
+  background: #fff;
+  border-radius: 25px;
+  left: 50%;
+  margin: 0 -230px;
+  padding: 30px 0;
+  position: absolute;
+  top: 200px;
+  width: 437px; }
+  .an-login .an-title {
+    color: red;
+    font-family: "GravurCondensed-Bold";
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase; }
+  .an-login .an-subtitle {
+    color: #888;
+    text-align: center; }
+  .an-login .an-input {
+    border: 1px solid #cbcbcb;
+    margin: 20px 0; }
+
+.an-welcome {
+  background: #fff;
+  border-radius: 45px;
+  padding: 10px 0 15px;
+  width: 454px; }
+  .an-welcome .an-title, .an-welcome .an-subtitle {
+    color: #666;
+    margin: 0; }
+
 /*# sourceMappingURL=landing.css.map */
