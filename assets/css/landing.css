@@ -242,4 +242,23 @@ input[disabled] {
     padding: 10px 85px;
     text-decoration: none; }
 
+.an-close {
+  transition: all ease 1s;
+  background: #ea002a;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: "flamasemicondensed-basic";
+  font-size: 13px;
+  height: 16px;
+  padding: 6px;
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  text-align: center;
+  width: 16px; }
+  .an-close:hover {
+    background: red; }
+
 /*# sourceMappingURL=landing.css.map */

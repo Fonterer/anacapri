@@ -16,7 +16,6 @@ define(
             },
 
             initialize: function(){
-                console.log('Friend - initialized');
                 this.friend = new FriendModel();
             },
 
@@ -36,7 +35,7 @@ define(
                         alert('Amigo convidado com sucesso');
 
                         // TO DO - create a method
-                        $('.an-input').each(function( index ) {
+                        $('.an-input').each(function(){
                             $(this).val('');
                         });
 
@@ -45,7 +44,7 @@ define(
 
                         setTimeout(function(){
                             $('html, body').animate({scrollTop: $('.an-footer').offset().top}, 'slow');
-                            window.location.hash = 'polaroid'
+                            window.location.hash = '!/descomplique'
                         }, 1000);
                     }
                 });

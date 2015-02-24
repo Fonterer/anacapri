@@ -9,19 +9,44 @@ define(
         'use strict';
 
         var UserView = Backbone.View.extend({
-            el: '.signin',
+            el: '.an-signup',
 
             events: {
-                'submit': 'userCreate'
+                'submit .create'   : 'createUser',
+                'submit .signin'   : 'findByEmail',
+                'click .an-signin' : 'showLogin',
+                'click .an-close'  : 'hideLogin'
             },
 
             initialize: function(){
-                console.log('User - initialized');
                 this.user = new UserModel();
-                // this.friend = new FriendModel();
             },
 
-            userCreate: function(e){
+            resetForm: function(context){
+                context.$('.an-input').each(function(){
+                    $(this).val('');
+                });
+            },
+
+            createCookie: function(id, name){
+                var  date = new Date();
+                date.setTime(date.getTime() + (30*24*60*60*1000));
+
+                var expires = 'expires=' + date.toGMTString();
+                document.cookie = 'anacapri=&' + name + '&' + id + ';' + expires;
+            },
+
+            hideCreateForm: function(){
+                $('.create').addClass('hide');
+            },
+
+            showWelcomeBlock: function(name){
+                $('.an-welcome span').text(name);
+                $('.an-welcome').removeClass('hide');
+            },
+
+            createUser: function(e){
+                var $this = this;
                 var fieldsForm = {
                     'id'   : null,
                     'name' : this.$('[name="name"]').val(),
@@ -33,39 +58,92 @@ define(
                         console.log('Error - ' + data);
                     },
                     success: function(data){
+                        var obj = data.attributes;
+
                         alert('User criado com sucesso');
-
-                        // TO DO - create a method
-                        $('.an-input').each(function( index ) {
-                            $(this).val('');
-                        });
-
-                        // TO DO - create a method
-                        var  date = new Date()
-                        date.setTime(date.getTime() + (30*24*60*60*1000));
-
-                        var expires = 'expires=' + date.toGMTString();
-                        document.cookie = 'anacapri=true;' + expires;
-
-                        // TO DO - create a method
-                        $('.signin').addClass('hide');
-                        $('.an-welcome span').text(data.attributes.name);
-                        $('.an-welcome').removeClass('hide');
-
-                        // TO DO - create a method
-                        setTimeout(function(){
-                            $('html, body').animate({scrollTop: $('.an-content').offset().top}, 'slow');
-                            window.location.hash = 'convide'
-                        }, 1000);
-
-                        // TO DO - create a method
-                        $('.friends .an-input').each(function() {
-                            $(this).removeAttr('disabled');
-                        });
+                        $this.resetForm($this);
+                        $this.createCookie(obj.id, obj.name);
+                        $this.hideCreateForm();
+                        $this.showWelcomeBlock(obj.name);
+                        $this.gotoSection('content', 'convide');
+                        $this.disabledForm();
                     }
                 });
 
                 e.preventDefault();
+            },
+
+            gotoSection: function(section, hash){
+                setTimeout(function(){
+                    $('html, body').animate({
+                        scrollTop: $('.'+section).offset().top
+                    }, 'slow');
+
+                    window.location.hash = '!/' + hash;
+                }, 1000);
+            },
+
+            disabledForm: function(){
+                $('.friends .an-input').each(function(){
+                    $(this).removeAttr('disabled');
+                });
+            },
+
+            findByEmail: function(e){
+                var $this = this
+                ,   email = this.$('[name="login-email"]').val();
+
+                Backbone.ajax({
+                    type: 'GET',
+                    url: 'http://localhost/anacapri/api/users/search/' + email,
+                    dataType: 'json'
+                }).done(function(data){
+                    var obj = data[0];
+
+                    $this.hideLogin();
+                    $this.resetForm($this);
+                    $this.createCookie(obj.id, obj.name);
+                    $this.hideCreateForm();
+                    $this.showWelcomeBlock(obj.name);
+                    $this.gotoSection('content', 'convide');
+                    $this.disabledForm();
+                });
+
+                e.preventDefault();
+            },
+
+            showLogin: function(e){
+                this.showOverlay();
+                this.$el.find('.an-login').removeClass('hide');
+                e.preventDefault();
+            },
+
+            hideLogin: function(e){
+                this.hideOverlay();
+                this.$el.find('input[type=text]').val('');
+                this.$el.find('.an-login').addClass('hide');
+
+                if(e){
+                    e.preventDefault();
+                }
+            },
+
+            showOverlay: function(){
+                this.blockView();
+                $('.an-overlay').removeClass('hide');
+            },
+
+            hideOverlay: function(){
+                this.unblockView();
+                $('.an-overlay').addClass('hide');
+            },
+
+            blockView: function(){
+                $('body').addClass('overflow');
+            },
+
+            unblockView: function(){
+                $('body').removeClass('overflow');
             }
         });
 

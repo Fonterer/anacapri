@@ -23,7 +23,7 @@
             gente te conta tudo.
           </p>
 
-          <form action="#" method="POST" class="an-form signin">
+          <form action="#" method="POST" class="an-form create">
             <div class="an-al">
               <input type="text" name="name" class="an-input" required placeholder="Digite o seu nome completo">
             </div>
@@ -48,11 +48,30 @@
               Você conhecerá as novidades em breve.
             </p>
           </div>
+
+          <div class="an-login hide">
+            <span class="an-close">X</span>
+            <h2 class="an-title">Login</h2>
+            <p class="an-subtitle">
+              Se você já se cadastrou antes, digite o seu <br>
+              email no campo abaixo para fazer login.
+            </p>
+
+            <form action="#" method="POST" class="an-form signin">
+              <div class="an-al">
+                <input type="email" name="login-email" class="an-input" required placeholder="Coloque aqui seu email ;-)">
+              </div>
+
+              <div class="an-al">
+                <input type="submit" class="an-button" value="Entrar">
+              </div>
+            </form>
+          </div><!-- an-login -->
         </div><!-- an-signup -->
       </div><!-- an-ct -->
     </header>
 
-    <section class="an-content">
+    <section class="an-content content">
       <a id="convide"></a>
       <div class="an-ct">
         <div class="an-share">
@@ -119,24 +138,6 @@
         </ul>
       </div><!-- an-al -->
     </footer>
-
-    <div class="an-login hide">
-      <h2 class="an-title">Login</h2>
-      <p class="an-subtitle">
-        Se você já se cadastrou antes, digite o seu <br>
-        email no campo abaixo para fazer login.
-      </p>
-
-      <form action="#" method="POST" class="an-form">
-        <div class="an-al">
-          <input type="email" name="login-email" class="an-input" placeholder="Coloque aqui seu email ;-)">
-        </div>
-
-        <div class="an-al">
-          <input type="submit" class="an-button" value="Entrar">
-        </div>
-      </form>
-    </div><!-- an-login -->
 
     <div class="an-invites hide">
       <h2 class="an-title">Convites enviados!</h2>
