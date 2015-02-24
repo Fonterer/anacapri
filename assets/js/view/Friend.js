@@ -12,17 +12,34 @@ define(
             el: '.friends',
 
             events: {
-                'submit': 'inviteFriend'
+                'blur input' : 'disabledSubmit',
+                'submit'     : 'inviteFriend'
             },
 
             initialize: function(){
                 this.friend = new FriendModel();
             },
 
+            resetForm: function(context){
+                context.$('.an-input').each(function(){
+                    $(this).val('');
+                });
+            },
+
+            disabledSubmit: function(){
+                var name = this.$('[name="friend-name"]').val()
+                ,  email = this.$('[name="friend-email"]').val();
+
+                if (name != '' && email != '') {
+                    console.log('Háaaa!!!');
+                };
+            },
+
             inviteFriend: function(e){
+                var $this = this;
                 var fieldsForm = {
                     'id'        : null,
-                    'id_friend' : '17',
+                    'id_friend' : this.$('[name="friend-id"]').val(),
                     'name'      : this.$('[name="friend-name"]').val(),
                     'email'     : this.$('[name="friend-email"]').val()
                 };
@@ -34,10 +51,7 @@ define(
                     success: function(data){
                         alert('Amigo convidado com sucesso');
 
-                        // TO DO - create a method
-                        $('.an-input').each(function(){
-                            $(this).val('');
-                        });
+                        $this.resetForm($this);
 
                         // TO DO - create a method
                         // $('.an-invite').removeClass('hide');

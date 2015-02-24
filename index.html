@@ -80,6 +80,7 @@
 
           <form action="#" method="POST" class="an-form friends">
             <div class="an-al">
+              <input type="hidden" name="friend-id" class="abc">
               <input type="text" name="friend-name" class="an-input" disabled required placeholder="Digite o nome completo">
               <input type="email" name="friend-email" class="an-input" disabled required placeholder="Coloque aqui o email ;-)">
             </div>
@@ -110,9 +111,19 @@
           </form>
         </div>
       </div>
+
+      <div class="an-invites hide">
+        <h2 class="an-title">Convites enviados!</h2>
+        <p class="an-subtitle">
+          Parabéns, seus convites foram enviados <br>
+          para as suas amigas com sucesso.
+        </p>
+
+        <a href="#" class="an-button">OK</a>
+      </div><!-- an-invites -->
     </section>
 
-    <footer class="an-footer">
+    <footer class="an-footer footer">
       <a id="polaroid"></a>
       <div class="an-ct">
         <div class="an-clips">
@@ -138,16 +149,6 @@
         </ul>
       </div><!-- an-al -->
     </footer>
-
-    <div class="an-invites hide">
-      <h2 class="an-title">Convites enviados!</h2>
-      <p class="an-subtitle">
-        Parabéns, seus convites foram enviados <br>
-        para as suas amigas com sucesso.
-      </p>
-
-      <a href="#" class="an-button">OK</a>
-    </div><!-- an-invites -->
 
     <div class="an-overlay hide"></div>
     <script data-main="assets/js/main" src="assets/vendor/requirejs/require.js"></script>
