@@ -15,7 +15,7 @@ input:focus, textarea:focus {
 }
 
 .an-header {
-  background: url(../img/an-header.jpg) no-repeat top center;
+  background: url(../../img/an-header.jpg) no-repeat top center;
   height: 767px;
   min-width: 1024px;
 }
@@ -46,7 +46,7 @@ h1 {
   width: 267px;
 
   a {
-    background: url(../img/an-logo.png) no-repeat;
+    background: url(../../img/an-logo.png) no-repeat;
     display: block;
     font: 0/0 a;
     height: 267px;
@@ -120,7 +120,7 @@ input[disabled] {
 }
 
 .an-content {
-  background: url(../img/an-content.jpg) no-repeat top center;
+  background: url(../../img/an-content.jpg) no-repeat top center;
   height: 907px;
   position: relative;
 }
@@ -156,7 +156,7 @@ input[disabled] {
 }
 
 .an-footer {
-  background: url(../img/an-footer.jpg) no-repeat top center;
+  background: url(../../img/an-footer.jpg) no-repeat top center;
   /*background-size: cover;*/
   height: 932px;
 }
@@ -168,7 +168,7 @@ input[disabled] {
 }
 
 .an-clip {
-  background: url(../img/an-clip.png) no-repeat top center;
+  background: url(../../img/an-clip.png) no-repeat top center;
   display: inline-block;
   height: 148px;
   margin: 0 110px;
@@ -218,7 +218,7 @@ input[disabled] {
   margin-top: 360px;
 
   li {
-    background: url(../img/an-sprite.png) no-repeat;
+    background: url(../../img/an-sprite.png) no-repeat;
     display: inline-block;
     list-style: none;
   }

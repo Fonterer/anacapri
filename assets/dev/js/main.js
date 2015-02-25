@@ -20,10 +20,10 @@ require.config({
         }
     },
     paths: {
-        jquery     : '../vendor/jquery/jquery',
-        underscore : '../vendor/underscore/underscore',
-        backbone   : '../vendor/backbone/backbone',
-        spin       : '../vendor/spinjs/spin'
+        jquery     : '../../vendor/jquery/jquery',
+        underscore : '../../vendor/underscore/underscore',
+        backbone   : '../../vendor/backbone/backbone',
+        spin       : '../../vendor/spinjs/spin'
     }
 });
 
@@ -36,5 +36,7 @@ require(
         var router = new Router(function(){
             Backbone.history.start({'pushState' : false, 'hashChange' : true});
         });
+
+        return router;
     }
-);
+)

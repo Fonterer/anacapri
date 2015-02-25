@@ -67,7 +67,7 @@ define(
                         alert('Ops... Um erro ocorreu!');
                         console.log('Error - ' + data);
                     },
-                    success: function(data){
+                    success: function(){
                         $this.ui.hideLoader();
                         $this.resetForm($this);
                         $this.showInviteConfirmation();
