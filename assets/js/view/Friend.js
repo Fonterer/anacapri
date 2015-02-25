@@ -12,8 +12,9 @@ define(
             el: '.friends',
 
             events: {
-                'blur input' : 'disabledSubmit',
-                'submit'     : 'inviteFriend'
+                'keyup input'  : 'disabledSubmit',
+                'submit'       : 'inviteFriend',
+                'click .close' : 'hideInviteConfirmation'
             },
 
             initialize: function(){
@@ -31,8 +32,49 @@ define(
                 ,  email = this.$('[name="friend-email"]').val();
 
                 if (name != '' && email != '') {
-                    console.log('Háaaa!!!');
-                };
+                    this.$('[type="submit"]').removeAttr('disabled');
+                }
+            },
+
+            gotoSection: function(section, hash){
+                setTimeout(function(){
+                    $('html, body').animate({
+                        scrollTop: $('.'+section).offset().top
+                    }, 'slow');
+
+                    window.location.hash = '!/' + hash;
+                }, 1000);
+            },
+
+            showInviteConfirmation: function(){
+                this.showOverlay();
+                this.$('.an-invites').removeClass('hide');
+            },
+
+            hideInviteConfirmation: function(e){
+                this.hideOverlay();
+                this.gotoSection('footer', 'descomplique');
+                this.$('.an-invites').addClass('hide');
+
+                e.preventDefault();
+            },
+
+            showOverlay: function(){
+                this.blockView();
+                $('.an-overlay').removeClass('hide');
+            },
+
+            hideOverlay: function(){
+                this.unblockView();
+                $('.an-overlay').addClass('hide');
+            },
+
+            blockView: function(){
+                $('body').addClass('overflow');
+            },
+
+            unblockView: function(){
+                $('body').removeClass('overflow');
             },
 
             inviteFriend: function(e){
@@ -50,16 +92,8 @@ define(
                     },
                     success: function(data){
                         alert('Amigo convidado com sucesso');
-
                         $this.resetForm($this);
-
-                        // TO DO - create a method
-                        // $('.an-invite').removeClass('hide');
-
-                        setTimeout(function(){
-                            $('html, body').animate({scrollTop: $('.an-footer').offset().top}, 'slow');
-                            window.location.hash = '!/descomplique'
-                        }, 1000);
+                        $this.showInviteConfirmation();
                     }
                 });
 

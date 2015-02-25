@@ -19,7 +19,7 @@ define(
       },
 
       index: function(){
-        window.location.hash = '!/'
+        window.location.hash = '!/';
 
         this.friendView = new FriendView();
         this.userView = new UserView();
