@@ -13,7 +13,8 @@ define(
             },
 
             url: function(){
-              return "http://localhost/anacapri/api/users"
+              return window.location.origin +
+                     window.location.pathname + 'api/users';
             }
         });
 

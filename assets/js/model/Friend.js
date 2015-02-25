@@ -14,7 +14,8 @@ define(
             },
 
             url: function(){
-              return "http://localhost/anacapri/api/friends"
+              return window.location.origin +
+                     window.location.pathname + 'api/friends';
             }
         });
 

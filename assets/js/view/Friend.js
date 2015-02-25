@@ -3,9 +3,10 @@ define(
     [
         'jquery',
         'backbone',
-        'model/friend'
+        'model/friend',
+        'view/ui'
     ],
-    function ($, Backbone, FriendModel) {
+    function ($, Backbone, FriendModel, Ui) {
         'use strict';
 
         var FriendView = Backbone.View.extend({
@@ -19,6 +20,7 @@ define(
 
             initialize: function(){
                 this.friend = new FriendModel();
+                this.ui = new Ui();
             },
 
             resetForm: function(context){
@@ -36,45 +38,17 @@ define(
                 }
             },
 
-            gotoSection: function(section, hash){
-                setTimeout(function(){
-                    $('html, body').animate({
-                        scrollTop: $('.'+section).offset().top
-                    }, 'slow');
-
-                    window.location.hash = '!/' + hash;
-                }, 1000);
-            },
-
             showInviteConfirmation: function(){
-                this.showOverlay();
+                this.ui.showOverlay();
                 this.$('.an-invites').removeClass('hide');
             },
 
             hideInviteConfirmation: function(e){
-                this.hideOverlay();
-                this.gotoSection('footer', 'descomplique');
+                this.ui.hideOverlay();
+                this.ui.gotoSection('footer', 'descomplique');
                 this.$('.an-invites').addClass('hide');
 
                 e.preventDefault();
-            },
-
-            showOverlay: function(){
-                this.blockView();
-                $('.an-overlay').removeClass('hide');
-            },
-
-            hideOverlay: function(){
-                this.unblockView();
-                $('.an-overlay').addClass('hide');
-            },
-
-            blockView: function(){
-                $('body').addClass('overflow');
-            },
-
-            unblockView: function(){
-                $('body').removeClass('overflow');
             },
 
             inviteFriend: function(e){
@@ -86,12 +60,15 @@ define(
                     'email'     : this.$('[name="friend-email"]').val()
                 };
 
+                this.ui.showLoader();
                 this.friend.save(fieldsForm, {
                     error: function(data){
+                        $this.ui.hideLoader();
+                        alert('Ops... Um erro ocorreu!');
                         console.log('Error - ' + data);
                     },
                     success: function(data){
-                        alert('Amigo convidado com sucesso');
+                        $this.ui.hideLoader();
                         $this.resetForm($this);
                         $this.showInviteConfirmation();
                     }

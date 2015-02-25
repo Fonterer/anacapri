@@ -11,11 +11,8 @@ define(
       model: UserModel,
 
       url: function(){
-        return "http://localhost/anacapri/api/users"
-      },
-
-      initialize: function(){
-        console.log('Collection - initialized');
+        return window.location.origin +
+               window.location.pathname + 'api/users';
       }
     });
 

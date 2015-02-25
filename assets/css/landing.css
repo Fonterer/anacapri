@@ -10,9 +10,30 @@
 @font-face {
   font-family: 'flamasemicondensed-basic';
   src: url("../fonts/flamasemicondensed-basic.eot?#iefix") format("embedded-opentype"), url("../fonts/flamasemicondensed-basic.woff") format("woff"), url("../fonts/flamasemicondensed-basic.ttf") format("truetype"), url("../fonts/flamasemicondensed-basic.svg#flamasemicondensed-basic") format("svg"); }
+@font-face {
+  font-family: 'FlamaSemicondensed-Medium';
+  src: url("../fonts/FlamaSemicondensed-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FlamaSemicondensed-Medium.woff") format("woff"), url("../fonts/FlamaSemicondensed-Medium.ttf") format("truetype"), url("../fonts/FlamaSemicondensed-Medium.svg#FlamaSemicondensed-Medium") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Bold';
+  src: url("../fonts/GravurCondensed-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Bold.woff") format("woff"), url("../fonts/GravurCondensed-Bold.ttf") format("truetype"), url("../fonts/GravurCondensed-Bold.svg#GravurCondensed-Bold") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Regular';
+  src: url("../fonts/GravurCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Regular.woff") format("woff"), url("../fonts/GravurCondensed-Regular.ttf") format("truetype"), url("../fonts/GravurCondensed-Regular.svg#GravurCondensed-Regular") format("svg"); }
+@font-face {
+  font-family: 'flamasemicondensed-basic';
+  src: url("../fonts/flamasemicondensed-basic.eot?#iefix") format("embedded-opentype"), url("../fonts/flamasemicondensed-basic.woff") format("woff"), url("../fonts/flamasemicondensed-basic.ttf") format("truetype"), url("../fonts/flamasemicondensed-basic.svg#flamasemicondensed-basic") format("svg"); }
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #a5d6d4; }
+
+input:focus, textarea:focus {
+  outline: 0; }
+
 .an-header {
   background: url(../img/an-header.jpg) no-repeat top center;
-  /*background-size: cover;*/
   height: 767px;
   min-width: 1024px; }
 
@@ -196,9 +217,6 @@ input[disabled] {
 
 .hide {
   display: none; }
-
-.overflow {
-  overflow: hidden; }
 
 .an-login, .an-invites {
   background: #fff;

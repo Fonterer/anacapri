@@ -3,9 +3,10 @@ define(
     [
         'jquery',
         'backbone',
-        'model/user'
+        'model/user',
+        'view/ui'
     ],
-    function ($, Backbone, UserModel) {
+    function ($, Backbone, UserModel, Ui) {
         'use strict';
 
         var UserView = Backbone.View.extend({
@@ -20,60 +21,14 @@ define(
 
             initialize: function(){
                 this.user = new UserModel();
+                this.ui = new Ui();
+                this.urlRoot = window.location.origin + window.location.pathname;
             },
 
             resetForm: function(context){
                 context.$('.an-input').each(function(){
                     $(this).val('');
                 });
-            },
-
-            createCookie: function(id, name){
-                var  date = new Date();
-                date.setTime(date.getTime() + (30*24*60*60*1000));
-
-                var expires = 'expires=' + date.toGMTString();
-                document.cookie = 'anacapri=&' + name + '&' + id + ';' + expires;
-            },
-
-            getCookie: function(){
-                if(!document.cookie.match('anacapri')){
-                  return false;
-                }
-
-                var name = 'anacapri='
-                ,     ca = document.cookie.split(';');
-
-                for(var i = 0; i < ca.length; i++){
-                  var c = ca[i];
-
-                  while (c.charAt(0) == ' '){
-                    c = c.substring(1);
-                  }
-
-                  if(c.indexOf(name) == 0){
-                    var d = c.substring(name.length, c.length),
-                        e = d.split('&');
-
-                    console.log('I: ' + e[2] + ' | M: ' + e[1]);
-
-                    $('input[name="friend-id"').val(e[2]);
-
-                    this.hideCreateForm();
-                    this.showWelcomeBlock(e[1]);
-                    this.gotoSection('content', 'convide');
-                    this.disabledForm();
-                  }
-                }
-            },
-
-            hideCreateForm: function(){
-                $('.create').addClass('hide');
-            },
-
-            showWelcomeBlock: function(name){
-                $('.an-welcome span').text(name);
-                $('.an-welcome').removeClass('hide');
             },
 
             createUser: function(e){
@@ -84,97 +39,81 @@ define(
                     'email': this.$('[name="email"]').val()
                 };
 
+                this.ui.showLoader();
                 this.user.save(fieldsForm, {
                     error: function(data){
+                        $this.ui.hideLoader();
+
+                        alert('Ops... Um erro ocorreu!');
                         console.log('Error - ' + data);
                     },
                     success: function(data){
                         var obj = data.attributes;
 
-                        alert('User criado com sucesso');
                         $this.resetForm($this);
-                        $this.createCookie(obj.id, obj.name);
-                        $this.hideCreateForm();
-                        $this.showWelcomeBlock(obj.name);
-                        $this.gotoSection('content', 'convide');
-                        $this.disabledForm();
+                        $this.ui.hideLoader();
+                        $this.ui.createCookie(obj.id, obj.name);
+                        $this.ui.setIdFriend(obj.id);
+                        $this.ui.hideCreateForm();
+                        $this.ui.showWelcomeBlock(obj.name);
+                        $this.ui.gotoSection('content', 'convide');
+                        $this.ui.disabledForm();
                     }
                 });
 
                 e.preventDefault();
             },
 
-            gotoSection: function(section, hash){
-                setTimeout(function(){
-                    $('html, body').animate({
-                        scrollTop: $('.'+section).offset().top
-                    }, 'slow');
-
-                    window.location.hash = '!/' + hash;
-                }, 1000);
-            },
-
-            disabledForm: function(){
-                $('.friends .an-input').each(function(){
-                    $(this).removeAttr('disabled');
-                });
-            },
-
             findByEmail: function(e){
                 var $this = this
                 ,   email = this.$('[name="login-email"]').val();
 
+                this.ui.showLoader();
+
                 Backbone.ajax({
                     type: 'GET',
-                    url: 'http://localhost/anacapri/api/users/search/' + email,
+                    url: this.urlRoot + 'api/users/search/' + email,
                     dataType: 'json'
-                }).done(function(data){
+                })
+                .done(function(data){
                     var obj = data[0];
 
                     $this.hideLogin();
                     $this.resetForm($this);
-                    $this.createCookie(obj.id, obj.name);
-                    $this.hideCreateForm();
-                    $this.showWelcomeBlock(obj.name);
-                    $this.gotoSection('content', 'convide');
-                    $this.disabledForm();
+
+                    $this.ui.hideLoader();
+                    $this.ui.createCookie(obj.id, obj.name);
+                    $this.ui.setIdFriend(obj.id);
+                    $this.ui.hideCreateForm();
+                    $this.ui.showWelcomeBlock(obj.name);
+                    $this.ui.gotoSection('content', 'convide');
+                    $this.ui.disabledForm();
+                })
+                .error(function(data){
+                    $this.ui.hideLoader();
+
+                    alert('Ops... Um erro ocorreu!');
+                    console.log('Error - ' + data);
                 });
 
                 e.preventDefault();
             },
 
             showLogin: function(e){
-                this.showOverlay();
+                this.ui.showOverlay();
                 this.$el.find('.an-login').removeClass('hide');
+
                 e.preventDefault();
             },
 
             hideLogin: function(e){
-                this.hideOverlay();
+                this.ui.hideOverlay();
                 this.$el.find('input[type=text]').val('');
                 this.$el.find('.an-login').addClass('hide');
 
                 if(e){
                     e.preventDefault();
                 }
-            },
-
-            showOverlay: function(){
-                this.blockView();
-                $('.an-overlay').removeClass('hide');
-            },
-
-            hideOverlay: function(){
-                this.unblockView();
-                $('.an-overlay').addClass('hide');
-            },
-
-            blockView: function(){
-                $('body').addClass('overflow');
-            },
-
-            unblockView: function(){
-                $('body').removeClass('overflow');
             }
         });
 

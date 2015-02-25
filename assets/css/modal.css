@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'FlamaSemicondensed-Medium';
+  src: url("../fonts/FlamaSemicondensed-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FlamaSemicondensed-Medium.woff") format("woff"), url("../fonts/FlamaSemicondensed-Medium.ttf") format("truetype"), url("../fonts/FlamaSemicondensed-Medium.svg#FlamaSemicondensed-Medium") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Bold';
+  src: url("../fonts/GravurCondensed-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Bold.woff") format("woff"), url("../fonts/GravurCondensed-Bold.ttf") format("truetype"), url("../fonts/GravurCondensed-Bold.svg#GravurCondensed-Bold") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Regular';
+  src: url("../fonts/GravurCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Regular.woff") format("woff"), url("../fonts/GravurCondensed-Regular.ttf") format("truetype"), url("../fonts/GravurCondensed-Regular.svg#GravurCondensed-Regular") format("svg"); }
+@font-face {
+  font-family: 'flamasemicondensed-basic';
+  src: url("../fonts/flamasemicondensed-basic.eot?#iefix") format("embedded-opentype"), url("../fonts/flamasemicondensed-basic.woff") format("woff"), url("../fonts/flamasemicondensed-basic.ttf") format("truetype"), url("../fonts/flamasemicondensed-basic.svg#flamasemicondensed-basic") format("svg"); }
+@font-face {
+  font-family: 'FlamaSemicondensed-Medium';
+  src: url("../fonts/FlamaSemicondensed-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FlamaSemicondensed-Medium.woff") format("woff"), url("../fonts/FlamaSemicondensed-Medium.ttf") format("truetype"), url("../fonts/FlamaSemicondensed-Medium.svg#FlamaSemicondensed-Medium") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Bold';
+  src: url("../fonts/GravurCondensed-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Bold.woff") format("woff"), url("../fonts/GravurCondensed-Bold.ttf") format("truetype"), url("../fonts/GravurCondensed-Bold.svg#GravurCondensed-Bold") format("svg"); }
+@font-face {
+  font-family: 'GravurCondensed-Regular';
+  src: url("../fonts/GravurCondensed-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/GravurCondensed-Regular.woff") format("woff"), url("../fonts/GravurCondensed-Regular.ttf") format("truetype"), url("../fonts/GravurCondensed-Regular.svg#GravurCondensed-Regular") format("svg"); }
+@font-face {
+  font-family: 'flamasemicondensed-basic';
+  src: url("../fonts/flamasemicondensed-basic.eot?#iefix") format("embedded-opentype"), url("../fonts/flamasemicondensed-basic.woff") format("woff"), url("../fonts/flamasemicondensed-basic.ttf") format("truetype"), url("../fonts/flamasemicondensed-basic.svg#flamasemicondensed-basic") format("svg"); }
+.an-modal {
+  transition: all 0.3s linear;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  z-index: 1040; }
+  .an-modal.open {
+    opacity: 1;
+    visibility: visible; }
+    .an-modal.open .an-modal-overlay {
+      background: rgba(0, 0, 0, 0.3);
+      visibility: visible; }
+
+.an-modal-overlay {
+  background: transparent;
+  height: 100%;
+  position: fixed;
+  transition: all 0.3s linear;
+  visibility: hidden;
+  z-index: 9000;
+  width: 100%; }
+
+.an-modal-box {
+  transition: all 0.3s linear;
+  background-color: #fff;
+  background-size: 50%;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  height: auto;
+  left: 39%;
+  margin: 0;
+  max-height: 90%;
+  max-width: 90%;
+  min-height: 100px;
+  min-width: 100px;
+  position: absolute;
+  top: 35%;
+  width: auto;
+  z-index: 9999; }
+
+.an-wrapper {
+  border-radius: 25px;
+  box-sizing: border-box;
+  float: left;
+  height: auto;
+  width: 100%; }
+
+.an-modal-content {
+  float: left;
+  width: 100%; }
+
+.an-message {
+  box-sizing: border-box;
+  font-family: "FlamaSemicondensed-Medium";
+  padding: 30px;
+  text-align: center; }
+  .an-message p {
+    color: red;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0;
+    max-width: 332px;
+    text-align: center; }
+
+.an-loading {
+  background: #fff url(../img/loader.svg) no-repeat center;
+  background-size: 100%;
+  display: inline-block;
+  height: 80px;
+  margin: 0 auto;
+  width: 70px; }
+
+/*# sourceMappingURL=modal.css.map */

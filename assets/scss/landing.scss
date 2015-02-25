@@ -1,13 +1,21 @@
 @import "fonts";
+@import "variables";
 
-$flama-book: "flamasemicondensed-basic";
-$flama-semicondensed: "FlamaSemicondensed-Medium";
-$gravur-condensed-bold: "GravurCondensed-Bold";
-$gravur-condensed-regular: "GravurCondensed-Regular";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #a5d6d4;
+}
+
+input:focus, textarea:focus {
+    outline: 0;
+}
 
 .an-header {
   background: url(../img/an-header.jpg) no-repeat top center;
-  /*background-size: cover;*/
   height: 767px;
   min-width: 1024px;
 }
@@ -263,10 +271,6 @@ input[disabled] {
 
 .hide {
   display: none;
-}
-
-.overflow {
-  overflow: hidden;
 }
 
 .an-login, .an-invites {
