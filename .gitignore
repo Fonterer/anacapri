@@ -1,6 +1,7 @@
 .DS_Store
 
 .sass-cache/
+assets/dist/
 assets/vendor/
 assets/psd/
 cache/
