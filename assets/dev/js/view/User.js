@@ -6,7 +6,8 @@ define(
         'model/user',
         'view/ui'
     ],
-    function ($, Backbone, UserModel, Ui) {
+    function ($, Backbone, UserModel, Ui)
+    {
         'use strict';
 
         var UserView = Backbone.View.extend({
@@ -16,22 +17,25 @@ define(
                 'submit .create'   : 'createUser',
                 'submit .signin'   : 'findByEmail',
                 'click .an-signin' : 'showLogin',
-                'click .an-close'  : 'hideLogin'
+                'click .an-close'  : 'hideLogin',
+                'click .an-logout' : 'deleteCookie'
             },
 
-            initialize: function(){
+            initialize: function() {
                 this.user = new UserModel();
                 this.ui = new Ui();
                 this.urlRoot = window.location.origin + window.location.pathname;
             },
 
-            resetForm: function(context){
+            resetForm: function(context) {
                 context.$('.an-input').each(function(){
                     $(this).val('');
                 });
             },
 
-            createUser: function(e){
+            createUser: function(e) {
+                if (this.$('[name="spider"]').val() != '') return false;
+
                 var $this = this;
                 var fieldsForm = {
                     'id'   : null,
@@ -64,7 +68,9 @@ define(
                 e.preventDefault();
             },
 
-            findByEmail: function(e){
+            findByEmail: function(e) {
+                if (this.$('[name="spider_f"]').val() != '') return false;
+
                 var $this = this
                 ,   email = this.$('[name="login-email"]').val();
 
@@ -75,7 +81,7 @@ define(
                     url: this.urlRoot + 'api/users/search/' + email,
                     dataType: 'json'
                 })
-                .done(function(data){
+                .done(function(data) {
                     var obj = data[0];
 
                     $this.hideLogin();
@@ -89,7 +95,7 @@ define(
                     $this.ui.gotoSection('content', 'convide');
                     $this.ui.disabledForm();
                 })
-                .error(function(data){
+                .error(function(data) {
                     $this.ui.hideLoader();
 
                     alert('Ops... Um erro ocorreu!');
@@ -99,14 +105,14 @@ define(
                 e.preventDefault();
             },
 
-            showLogin: function(e){
+            showLogin: function(e) {
                 this.ui.showOverlay();
                 this.$el.find('.an-login').removeClass('hide');
 
                 e.preventDefault();
             },
 
-            hideLogin: function(e){
+            hideLogin: function(e) {
                 this.ui.hideOverlay();
                 this.$el.find('input[type=text]').val('');
                 this.$el.find('.an-login').addClass('hide');
@@ -114,6 +120,12 @@ define(
                 if(e){
                     e.preventDefault();
                 }
+            },
+
+            deleteCookie: function() {
+                document.cookie = "anacapri=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                this.ui.hideWelcomeBlock();
+                this.ui.showCreateForm();
             }
         });
 

@@ -59,6 +59,10 @@ define(
                 }
             },
 
+            showCreateForm: function(){
+                $('.create').removeClass('hide');
+            },
+
             hideCreateForm: function(){
                 $('.create').addClass('hide');
             },
@@ -66,6 +70,11 @@ define(
             showWelcomeBlock: function(name){
                 $('.an-welcome span').text(name);
                 $('.an-welcome').removeClass('hide');
+            },
+
+            hideWelcomeBlock: function(){
+                $('.an-welcome span').text('');
+                $('.an-welcome').addClass('hide');
             },
 
             disabledForm: function(){

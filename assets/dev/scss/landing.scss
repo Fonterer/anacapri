@@ -157,7 +157,6 @@ input[disabled] {
 
 .an-footer {
   background: url(../../img/an-footer.jpg) no-repeat top center;
-  /*background-size: cover;*/
   height: 932px;
 }
 
@@ -309,11 +308,35 @@ input[disabled] {
   background: #fff;
   border-radius: 45px;
   padding: 10px 0 15px;
+  position: relative;
   width: 454px;
 
   .an-title, .an-subtitle {
     color: #666;
     margin: 0;
+  }
+
+  b {
+    transition: all ease 1s;
+
+    background: #ea002a;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    right: -15px;
+    text-align: center;
+    top: -15px;
+    width: 25px;
+
+    &:hover {
+      background: red;
+    }
   }
 }
 

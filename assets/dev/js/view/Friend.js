@@ -52,6 +52,8 @@ define(
             },
 
             inviteFriend: function(e){
+                if (this.$('[name="spider"]').val() != '') return false;
+
                 var $this = this;
                 var fieldsForm = {
                     'id'        : null,
