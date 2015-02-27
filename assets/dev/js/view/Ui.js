@@ -11,7 +11,7 @@ define(
             el: 'body',
 
             initialize: function(){
-                console.log('UiView');
+                // console.log('UiView');
             },
 
             resetForm: function(context){

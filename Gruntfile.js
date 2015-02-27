@@ -46,13 +46,13 @@ module.exports = function(grunt){
         },
         files : {
           'assets/dist/js/main.js'            : ['assets/dev/js/main.js'],
-          'assets/dist/js/view/User.js'       : ['assets/dev/js/view/User.js'],
-          'assets/dist/js/view/Ui.js'         : ['assets/dev/js/view/Ui.js'],
-          'assets/dist/js/view/Friend.js'     : ['assets/dev/js/view/Friend.js'],
-          'assets/dist/js/route/App.js'       : ['assets/dev/js/route/App.js'],
-          'assets/dist/js/model/User.js'      : ['assets/dev/js/model/User.js'],
-          'assets/dist/js/model/Friend.js'    : ['assets/dev/js/model/Friend.js'],
-          'assets/dist/js/collection/User.js' : ['assets/dev/js/collection/User.js']
+          'assets/dist/js/view/user.js'       : ['assets/dev/js/view/user.js'],
+          'assets/dist/js/view/ui.js'         : ['assets/dev/js/view/ui.js'],
+          'assets/dist/js/view/friend.js'     : ['assets/dev/js/view/friend.js'],
+          'assets/dist/js/route/app.js'       : ['assets/dev/js/route/app.js'],
+          'assets/dist/js/model/user.js'      : ['assets/dev/js/model/user.js'],
+          'assets/dist/js/model/friend.js'    : ['assets/dev/js/model/friend.js'],
+          'assets/dist/js/collection/user.js' : ['assets/dev/js/collection/user.js']
         }
       }
     },

@@ -12,6 +12,7 @@ define(
 
     var AppRoute = Backbone.Router.extend({
       routes: {
+        '/'         : 'index',
         '/anacapri' : 'index'
       },
 

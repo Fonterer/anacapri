@@ -57,8 +57,18 @@ define(
                     'id'        : null,
                     'id_friend' : this.$('[name="friend-id"]').val(),
                     'name'      : this.$('[name="friend-name"]').val(),
-                    'email'     : this.$('[name="friend-email"]').val()
+                    'email'     : this.$('[name="friend-email"]').val(),
+                    'name2'     : this.$('[name="friend-name-2"]').val(),
+                    'email2'    : this.$('[name="friend-email-2"]').val(),
+                    'name3'     : this.$('[name="friend-name-3"]').val(),
+                    'email3'    : this.$('[name="friend-email-3"]').val(),
+                    'name4'     : this.$('[name="friend-name-4"]').val(),
+                    'email4'    : this.$('[name="friend-email-4"]').val(),
+                    'name5'     : this.$('[name="friend-name-5"]').val(),
+                    'email5'    : this.$('[name="friend-email-5"]').val()
                 };
+
+                // console.log(fieldsForm);
 
                 this.ui.showLoader();
                 this.friend.save(fieldsForm, {
