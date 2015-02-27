@@ -11,3 +11,4 @@ npm-debug.log
 .buildpath
 .project
 .settings
+composer.phar
