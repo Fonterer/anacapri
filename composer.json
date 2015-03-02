@@ -1,8 +1,6 @@
 {
   "require": {
     "doctrine/orm": "~2.3.5",
-    "slim/slim": "2.*",
-    "slim/views": "~0.1.2",
-    "twig/twig": "~1.15.1"
+    "slim/slim": "1.6.7"
   }
 }
