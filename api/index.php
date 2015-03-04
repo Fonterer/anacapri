@@ -1,5 +1,5 @@
 <?php
-require '../vendor/Slim/slim/Slim/Slim.php';
+require '../vendor/slim/slim/Slim/Slim.php';
 
 $app = new Slim();
 

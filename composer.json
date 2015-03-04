@@ -1,5 +1,5 @@
 {
   "require": {
-    "slim/slim": "2.6.1"
+    "slim/slim": "1.6.7"
   }
 }
