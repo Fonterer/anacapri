@@ -1,5 +1,5 @@
 <?php
-require '../vendor/_Slim/slim/Slim/Slim.php';
+require '../vendor/Slim/slim/Slim/Slim.php';
 
 $app = new Slim();
 
@@ -185,13 +185,3 @@ function getConnection()
 
   return $dbh;
 }
-
-// $dbhost="mysql01.anacapridescomplica.hospedagemdesites.ws";
-// $dbuser="anacapridescom";
-// $dbpass="anacapri2502";
-// $dbname="anacapridescom";
-
-// $dbhost="localhost";
-// $dbuser="root";
-// $dbpass="";
-// $dbname="anacapri";
