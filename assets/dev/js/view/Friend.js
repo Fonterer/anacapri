@@ -54,21 +54,48 @@ define(
             inviteFriend: function(e){
                 if (this.$('[name="spider"]').val() != '') return false;
 
+                var hasError = false;
+                for(var i= 2; i<=5; i++) {
+                    if($("[name='friend-email-" + i + "']").val() != "") {
+                        if($("[name='friend-email-" + i + "']").val() != undefined) {
+                            if($("[name='friend-name-" + i + "']").val() === undefined || $("[name='friend-name-" + i + "']").val() == '') {
+                                hasError = true;
+                            }
+                        }
+                    }
+                }
+
+                if(hasError) {
+                    alert("Informe nome e e-mail para enviar.");
+                    return false;
+                }
+
                 var $this = this;
                 var fieldsForm = {
-                    'id'        : null,
-                    'id_friend' : this.$('[name="friend-id"]').val(),
-                    'name'      : this.$('[name="friend-name"]').val(),
-                    'email'     : this.$('[name="friend-email"]').val(),
-                    'name2'     : this.$('[name="friend-name-2"]').val(),
-                    'email2'    : this.$('[name="friend-email-2"]').val(),
-                    'name3'     : this.$('[name="friend-name-3"]').val(),
-                    'email3'    : this.$('[name="friend-email-3"]').val(),
-                    'name4'     : this.$('[name="friend-name-4"]').val(),
-                    'email4'    : this.$('[name="friend-email-4"]').val(),
-                    'name5'     : this.$('[name="friend-name-5"]').val(),
-                    'email5'    : this.$('[name="friend-email-5"]').val()
-                };
+                    "id_friend": $('.abc').val(),
+                    "friends": [
+                        {
+                            "name": this.$('[name="friend-name"]').val(),
+                            "email": this.$('[name="friend-email"]').val()
+                        },
+                        {
+                            "name": this.$('[name="friend-name-2"]').val(),
+                            "email": this.$('[name="friend-email-2"]').val()
+                        },
+                        {
+                            "name": this.$('[name="friend-name-3"]').val(),
+                            "email": this.$('[name="friend-email-3"]').val()
+                        },
+                        {
+                            "name": this.$('[name="friend-name-4"]').val(),
+                            "email": this.$('[name="friend-email-4"]').val()
+                        },
+                        {
+                            "name": this.$('[name="friend-name-5"]').val(),
+                            "email": this.$('[name="friend-email-5"]').val()
+                        }
+                    ]
+                }
 
                 // console.log(fieldsForm);
 

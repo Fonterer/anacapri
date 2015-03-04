@@ -1,5 +1,5 @@
 <?php
-require '../vendor/Slim/Slim/Slim.php';
+require '../vendor/_Slim/slim/Slim/Slim.php';
 
 $app = new Slim();
 
@@ -147,25 +147,26 @@ function addFriend()
   $data = json_decode($request->getBody());
   $sql = "INSERT INTO friends (id_friend, name, email) VALUES (:id_friend, :name, :email)";
 
-  // if (json_encode($data->name == '')) {
-  //   echo "It's empty!!!";
-  // }
-
   try {
-    $db = getConnection();
-    $stmt = $db->prepare($sql);
-    $stmt->bindParam("id_friend", $data->id_friend);
-    $stmt->bindParam("name", $data->name);
-    $stmt->bindParam("email", $data->email);
-    $stmt->execute();
-    $data->id = $db->lastInsertId();
-    $db = null;
-
-    echo json_encode($data);
+    foreach ($data->friends as $friend => $value) {
+      if (empty($value->email) == FALSE) {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id_friend", $data->id_friend);
+        $stmt->bindParam("name", $value->name);
+        $stmt->bindParam("email", $value->email);
+        $stmt->execute();
+        $db = null;
+      }
+    }
   } catch(PDOException $e) {
-    error_log($e->getMessage(), 3, '/var/tmp/php.log');
-    echo '{"error":{"text":'. $e->getMessage() .'}}';
+      error_log($e->getMessage(), 3, '/var/tmp/php.log');
+      echo '{"error":{"text":'. $e->getMessage() .'}}';
+
+      die();
   }
+
+  echo json_encode("{'statusCode': 200}");
 }
 
 function getConnection()
@@ -174,7 +175,23 @@ function getConnection()
   $dbuser="root";
   $dbpass="";
   $dbname="anacapri";
+
+  if (isset($dbh)) {
+    return $dbh;
+  }
+
   $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
   return $dbh;
 }
+
+// $dbhost="mysql01.anacapridescomplica.hospedagemdesites.ws";
+// $dbuser="anacapridescom";
+// $dbpass="anacapri2502";
+// $dbname="anacapridescom";
+
+// $dbhost="localhost";
+// $dbuser="root";
+// $dbpass="";
+// $dbname="anacapri";

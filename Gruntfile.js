@@ -42,7 +42,8 @@ module.exports = function(grunt){
         options : {
           report  : 'gzip',
           compress: true,
-          mangle  : false
+          mangle  : false,
+          sourceMap: true
         },
         files : {
           'assets/dist/js/main.js'            : ['assets/dev/js/main.js'],

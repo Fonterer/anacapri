@@ -49,7 +49,7 @@ define(
 
                     // console.log('I: ' + e[2] + ' | M: ' + e[1]);
 
-                    $('input[name="friend-id"').val(e[2]);
+                    $('.abc').val(e[2]);
 
                     this.hideCreateForm();
                     this.showWelcomeBlock(e[1]);
@@ -102,7 +102,7 @@ define(
             },
 
             setIdFriend: function(id){
-                $('input[name="friend-id"').val(id);
+                $('.abc').val(id);
             },
 
             showOverlay: function(){

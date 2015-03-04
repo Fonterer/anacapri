@@ -1,6 +1,5 @@
 {
   "require": {
-    "doctrine/orm": "~2.3.5",
-    "slim/slim": "1.6.7"
+    "slim/slim": "2.6.1"
   }
 }
